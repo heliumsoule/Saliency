@@ -13,6 +13,8 @@ struct Constants {
     struct General {
         static let compBlue:UIColor = UIColor(red: CGFloat(53.0 / 255), green: CGFloat(183.0 / 255), blue: CGFloat(236.0 / 255), alpha: 1.0)
         static let darkGray = UIColor.darkGray
+        
+        static let inputConfirmationKey = "com.kanwisher.InputConfirmation"
     }
     
     struct SignUp {

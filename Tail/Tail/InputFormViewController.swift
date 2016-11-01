@@ -28,6 +28,9 @@ class InputFormViewController: UIViewController {
         self.nameField.placeholder = Constants.InputForm.namePL
         self.emailField.placeholder = Constants.InputForm.emailPL
         
+        self.nameField.delegate = self
+        self.emailField.delegate = self
+        
         self.view.addSubview(descriptionText)
         self.view.addSubview(self.nameField)
         self.view.addSubview(self.emailField)
@@ -46,7 +49,7 @@ class InputFormViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(InputFormViewController.dismissViewController))
         
         self.view.backgroundColor = UIColor.white
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(InputFormViewController.validateInput), name: NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey), object: nil)
     }
     
     func customLayout() {
@@ -78,6 +81,11 @@ class InputFormViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(InputFormViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(InputFormViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        let completeFormTap = UITapGestureRecognizer()
+        completeFormTap.numberOfTapsRequired = 1
+        completeFormTap.addTarget(self, action: #selector(InputFormViewController.completeForm))
+        self.keyboardContainer.completeButton.addGestureRecognizer(completeFormTap)
+        
         let dismissKeyboardTap = UITapGestureRecognizer()
         dismissKeyboardTap.numberOfTapsRequired = 1
         dismissKeyboardTap.addTarget(self, action: #selector(InputFormViewController.dismissKeyboard))
@@ -85,9 +93,30 @@ class InputFormViewController: UIViewController {
         self.view.addGestureRecognizer(dismissKeyboardTap)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillShow)
+        NotificationCenter.default.removeObserver(NSNotification.Name.UIKeyboardWillHide)
+    }
+    
     func dismissViewController() {
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func completeForm() {
+        if !self.nameField.text!.isEmpty && !self.emailField.text!.isEmpty {
+            
+            self.view.endEditing(true)
+            self.dismiss(animated: true, completion: { 
+                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey), object: nil)
+            })
+        }
+    }
+    
+    func validateInput() {
+        print("Should send a server request here")
     }
     
     func dismissKeyboard() {
@@ -95,32 +124,41 @@ class InputFormViewController: UIViewController {
     }
     
     func keyboardWillShow(_ notification: NSNotification) {
+        changeKeyboardContainerHeight(notification: notification, showingKeyboard: true)
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        changeKeyboardContainerHeight(notification: notification, showingKeyboard: false)
+    }
+
+    func changeKeyboardContainerHeight(notification: NSNotification, showingKeyboard: Bool) {
         let userInfo = (notification.userInfo as! [String: AnyObject])
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         let endHeight = (userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect).height
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .beginFromCurrentState, animations: {
             
-            self.heightConstraint!.constant = -endHeight
+            self.heightConstraint!.constant = showingKeyboard ? -endHeight : 0
             self.view.layoutIfNeeded()
         }, completion: nil)
-
+        
     }
     
-    func keyboardWillHide(_ notification: NSNotification) {
-        let userInfo = (notification.userInfo as! [String: AnyObject])
-        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey))
+    }
+}
 
-        UIView.animate(withDuration: duration, delay: 0.0, options: .beginFromCurrentState, animations: {
-            
-            self.heightConstraint!.constant = 0
-            self.view.layoutIfNeeded()
-        }, completion: nil)
+extension InputFormViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        textField.layoutIfNeeded()
     }
     
 }
-
-
 
 
 

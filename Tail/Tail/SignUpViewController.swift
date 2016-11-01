@@ -61,6 +61,8 @@ class SignUpViewController: UIViewController {
         signUpTap.addTarget(self, action: #selector(SignUpViewController.transitionToInput))
 
         self.loginButton.addGestureRecognizer(signUpTap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpViewController.transitionToCalibration), name: NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +84,12 @@ class SignUpViewController: UIViewController {
         self.present(navigationBarVC, animated: true, completion: nil)
     }
     
+    func transitionToCalibration() {
+        
+        print("Should go to calibration view")
+        NotificationCenter.default.removeObserver(name: NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey))
+        self.navigationController!.present(UIViewController(), animated: true, completion: nil)
+    }
 
 }
 
