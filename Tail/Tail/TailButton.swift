@@ -10,12 +10,17 @@ import UIKit
 
 class TailButton: UIButton {
     
-    init(inputImg: UIImage) {
+    convenience init(inputImg: UIImage) {
+        self.init()
+
+        self.setImage(#imageLiteral(resourceName: "Airplane"), for: .normal)
+    }
+
+    init() {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.contentMode = .center
-        self.setImage(#imageLiteral(resourceName: "Airplane"), for: .normal)
         
         self.backgroundColor = Constants.General.compBlue
     }

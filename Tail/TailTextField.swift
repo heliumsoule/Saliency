@@ -26,8 +26,8 @@ class TailTextField: UITextField {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let startingPoint = CGPoint(x: rect.minX, y: rect.maxY)
-        let endingPoint = CGPoint(x: rect.maxX, y: rect.maxY)
+        let startingPoint = CGPoint(x: rect.minX, y: rect.maxY - Constants.InputForm.underlineWidth / 2)
+        let endingPoint = CGPoint(x: rect.maxX, y: rect.maxY - Constants.InputForm.underlineWidth / 2)
         
         let path = UIBezierPath()
         path.move(to: startingPoint)

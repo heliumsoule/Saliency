@@ -14,13 +14,13 @@ class InputFormViewController: UIViewController {
     let nameField = TailTextField()
     let emailField = TailTextField()
     
-    let completeButton = TailButton(inputImg: #imageLiteral(resourceName: "Airplane"))
+    let keyboardContainer = KeyboardTail(inputImg: #imageLiteral(resourceName: "Airplane"))
+    var heightConstraint:NSLayoutConstraint!
     
     init() {
         super.init(nibName: nil, bundle: nil)
         
         self.edgesForExtendedLayout = []
-        self.completeButton.translatesAutoresizingMaskIntoConstraints = false
         
         self.descriptionText.textAlignment = .left
         self.descriptionText.textColor = UIColor.darkGray
@@ -28,14 +28,10 @@ class InputFormViewController: UIViewController {
         self.nameField.placeholder = Constants.InputForm.namePL
         self.emailField.placeholder = Constants.InputForm.emailPL
         
-        let inset = UIScreen.main.bounds.width * Constants.InputForm.buttonRatio * Constants.InputForm.padding / 2 // Divide by 2 because of radius
-        
-        self.completeButton.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-        
         self.view.addSubview(descriptionText)
         self.view.addSubview(self.nameField)
         self.view.addSubview(self.emailField)
-        self.view.addSubview(self.completeButton)
+        self.view.addSubview(self.keyboardContainer)
         
         customLayout()
     }
@@ -64,9 +60,12 @@ class InputFormViewController: UIViewController {
         self.view.addConstraint(AL.verticalSpacingConstraint(topView: self.nameField, bottomView: self.emailField, spacing: 20))
         self.view.addConstraints(AL.paddingPositionConstraints(view: self.emailField, sides: [.left, .right], padding: 24))
         
-        self.view.addConstraints(AL.squareWidthConstraints(view: self.completeButton, widthRatio: Constants.InputForm.buttonRatio))
-        self.view.addConstraint(AL.paddingPositionConstraint(view: self.completeButton, side: .bottom, padding: 0))
-        self.view.addConstraint(NSLayoutConstraint(item: self.completeButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.7, constant: 0))
+        self.view.addConstraints(AL.paddingPositionConstraints(view: self.keyboardContainer, sides: [.left, .right], padding: 0))
+        
+        self.heightConstraint = AL.paddingPositionConstraint(view: self.keyboardContainer, side: .bottom, padding: 0)
+        self.view.addConstraint(self.heightConstraint)
+        
+        self.view.addConstraint(NSLayoutConstraint(item: self.keyboardContainer, attribute: .height, relatedBy: .equal, toItem: self.keyboardContainer.completeButton, attribute: .width, multiplier: 1.5, constant: 0))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,21 +85,37 @@ class InputFormViewController: UIViewController {
         self.view.addGestureRecognizer(dismissKeyboardTap)
     }
     
-    func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-    
     func dismissViewController() {
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     
-    func keyboardWillShow() {
-        
+    func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
-    func keyboardWillHide() {
+    func keyboardWillShow(_ notification: NSNotification) {
+        let userInfo = (notification.userInfo as! [String: AnyObject])
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let endHeight = (userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect).height
         
+        UIView.animate(withDuration: duration, delay: 0.0, options: .beginFromCurrentState, animations: {
+            
+            self.heightConstraint!.constant = -endHeight
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        let userInfo = (notification.userInfo as! [String: AnyObject])
+        let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+
+        UIView.animate(withDuration: duration, delay: 0.0, options: .beginFromCurrentState, animations: {
+            
+            self.heightConstraint!.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
 }

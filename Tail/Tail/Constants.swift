@@ -12,6 +12,7 @@ struct Constants {
     
     struct General {
         static let compBlue:UIColor = UIColor(red: CGFloat(53.0 / 255), green: CGFloat(183.0 / 255), blue: CGFloat(236.0 / 255), alpha: 1.0)
+        static let darkGray = UIColor.darkGray
     }
     
     struct SignUp {
@@ -32,7 +33,7 @@ struct Constants {
         static let namePL:String = "Write your full name here."
         static let emailPL:String = "Write your email address here."
         
-        static let underlineWidth:CGFloat = 2.5
+        static let underlineWidth:CGFloat = 2
         static let buttonRatio:CGFloat = 0.1
         static let padding:CGFloat = 0.4 // Should be at least sqrt(2) - 1
     }
