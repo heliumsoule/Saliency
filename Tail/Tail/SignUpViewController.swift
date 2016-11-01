@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController {
         self.view.addConstraint(AL.fillXConstraint(view: self.loginButton, widthRatio: 0.4))
         self.view.addConstraint(AL.horizontalAlignConstraint(firstView: self.backgroundImg, secondView: self.loginButton))
         self.view.addConstraint(NSLayoutConstraint(item: self.loginButton, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.6, constant: 0))
-        
+                
     }
     
     override func viewDidLoad() {

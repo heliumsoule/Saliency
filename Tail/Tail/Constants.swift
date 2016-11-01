@@ -33,6 +33,8 @@ struct Constants {
         static let emailPL:String = "Write your email address here."
         
         static let underlineWidth:CGFloat = 2.5
+        static let buttonRatio:CGFloat = 0.1
+        static let padding:CGFloat = 0.4 // Should be at least sqrt(2) - 1
     }
     
 }

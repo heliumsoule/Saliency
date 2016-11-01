@@ -15,6 +15,7 @@ class TailTextField: UITextField {
         
         self.tintColor = Constants.General.compBlue
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.autocorrectionType = .no
         
     }
     

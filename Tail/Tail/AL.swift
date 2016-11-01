@@ -50,6 +50,14 @@ class AL {
         return NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: view.superview!, attribute: .height, multiplier: heightRatio, constant: 0)
     }
     
+    static func squareWidthConstraints(view: UIView, widthRatio: CGFloat) -> [NSLayoutConstraint] {
+        
+        return [
+            NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: view.superview!, attribute: .width, multiplier: widthRatio, constant: 0),
+            NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1.0, constant: 0)
+        ]
+    }
+    
 }
 
 
