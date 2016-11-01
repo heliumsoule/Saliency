@@ -63,13 +63,23 @@ class SignUpViewController: UIViewController {
         self.loginButton.addGestureRecognizer(signUpTap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
     func transitionToInput() {
-        self.present(InputFormViewController(), animated: true, completion: nil)
+        let navigationBarVC = UINavigationController(rootViewController: InputFormViewController())
+        
+        self.present(navigationBarVC, animated: true, completion: nil)
     }
     
 

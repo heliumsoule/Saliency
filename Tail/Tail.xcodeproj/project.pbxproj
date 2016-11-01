@@ -18,6 +18,7 @@
 		DC88370F1DC7D18900E05AEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88370E1DC7D18900E05AEF /* Constants.swift */; };
 		DCF7DB2A1DC7DCCA00856003 /* TailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB291DC7DCCA00856003 /* TailButton.swift */; };
 		DCF7DB2C1DC7E40600856003 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB2B1DC7E40600856003 /* InputFormViewController.swift */; };
+		DCF7DB2E1DC81D7400856003 /* TailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB2D1DC81D7400856003 /* TailTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DC88370E1DC7D18900E05AEF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DCF7DB291DC7DCCA00856003 /* TailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailButton.swift; sourceTree = "<group>"; };
 		DCF7DB2B1DC7E40600856003 /* InputFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
+		DCF7DB2D1DC81D7400856003 /* TailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		DC8836D01DC7C52D00E05AEF = {
 			isa = PBXGroup;
 			children = (
+				DCF7DB2D1DC81D7400856003 /* TailTextField.swift */,
 				DC8836DB1DC7C52D00E05AEF /* Tail */,
 				DC8836F01DC7C52D00E05AEF /* TailTests */,
 				DC8836FB1DC7C52D00E05AEF /* TailUITests */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC88370F1DC7D18900E05AEF /* Constants.swift in Sources */,
+				DCF7DB2E1DC81D7400856003 /* TailTextField.swift in Sources */,
 				DCF7DB2C1DC7E40600856003 /* InputFormViewController.swift in Sources */,
 				DCF7DB2A1DC7DCCA00856003 /* TailButton.swift in Sources */,
 				DC88370D1DC7CAE200E05AEF /* TailText.swift in Sources */,
