@@ -15,6 +15,7 @@ struct Constants {
         static let darkGray = UIColor.darkGray
         
         static let inputConfirmationKey = "com.kanwisher.InputConfirmation"
+        static let second:CGFloat = 1.0
     }
     
     struct SignUp {
@@ -40,4 +41,9 @@ struct Constants {
         static let padding:CGFloat = 0.4 // Should be at least sqrt(2) - 1
     }
     
+    struct Calibration {
+        static let clockFS:CGFloat = 36
+        static let clockFW:CGFloat = UIFontWeightBold
+        static let startTime:Int = 300
+    }
 }
