@@ -16,6 +16,7 @@ struct Constants {
         
         static let inputConfirmationKey = "com.kanwisher.InputConfirmation"
         static let second:CGFloat = 1.0
+        
     }
     
     struct SignUp {
@@ -42,8 +43,14 @@ struct Constants {
     }
     
     struct Calibration {
-        static let clockFS:CGFloat = 36
-        static let clockFW:CGFloat = UIFontWeightBold
-        static let startTime:Int = 300
+        static let clockFS:CGFloat = 46
+        static let clockFW:CGFloat = UIFontWeightThin
+        static let startTime:Int = 3
+        
+        static let centerRatio:CGFloat = 0.4
+        
+        static let numberOfRows:Int = 5
+        static let numberOfCols:Int = 4
+        static let circleDiameter:CGFloat = 0.1
     }
 }

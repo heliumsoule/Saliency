@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DC36FE9E1DC84092008F1FA8 /* KeyboardTail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FE9D1DC84092008F1FA8 /* KeyboardTail.swift */; };
 		DC36FEA01DC85862008F1FA8 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FE9F1DC85862008F1FA8 /* CalibrationViewController.swift */; };
+		DC36FEA21DC8F8F3008F1FA8 /* CalibrationDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FEA11DC8F8F3008F1FA8 /* CalibrationDot.swift */; };
+		DC36FEA41DC949D8008F1FA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FEA31DC949D8008F1FA8 /* Extensions.swift */; };
+		DC36FEA61DC94AD7008F1FA8 /* TailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FEA51DC94AD7008F1FA8 /* TailTextField.swift */; };
 		DC8836DD1DC7C52D00E05AEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8836DC1DC7C52D00E05AEF /* AppDelegate.swift */; };
 		DC8836DF1DC7C52D00E05AEF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8836DE1DC7C52D00E05AEF /* SignUpViewController.swift */; };
 		DC8836E41DC7C52D00E05AEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8836E31DC7C52D00E05AEF /* Assets.xcassets */; };
@@ -20,7 +23,6 @@
 		DC88370F1DC7D18900E05AEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88370E1DC7D18900E05AEF /* Constants.swift */; };
 		DCF7DB2A1DC7DCCA00856003 /* TailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB291DC7DCCA00856003 /* TailButton.swift */; };
 		DCF7DB2C1DC7E40600856003 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB2B1DC7E40600856003 /* InputFormViewController.swift */; };
-		DCF7DB2E1DC81D7400856003 /* TailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7DB2D1DC81D7400856003 /* TailTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 /* Begin PBXFileReference section */
 		DC36FE9D1DC84092008F1FA8 /* KeyboardTail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTail.swift; sourceTree = "<group>"; };
 		DC36FE9F1DC85862008F1FA8 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
+		DC36FEA11DC8F8F3008F1FA8 /* CalibrationDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationDot.swift; sourceTree = "<group>"; };
+		DC36FEA31DC949D8008F1FA8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Tail/Extensions.swift; sourceTree = "<group>"; };
+		DC36FEA51DC94AD7008F1FA8 /* TailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailTextField.swift; sourceTree = "<group>"; };
 		DC8836D91DC7C52D00E05AEF /* Tail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8836DC1DC7C52D00E05AEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC8836DE1DC7C52D00E05AEF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +65,6 @@
 		DC88370E1DC7D18900E05AEF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DCF7DB291DC7DCCA00856003 /* TailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailButton.swift; sourceTree = "<group>"; };
 		DCF7DB2B1DC7E40600856003 /* InputFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
-		DCF7DB2D1DC81D7400856003 /* TailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,7 @@
 		DC8836D01DC7C52D00E05AEF = {
 			isa = PBXGroup;
 			children = (
-				DCF7DB2D1DC81D7400856003 /* TailTextField.swift */,
+				DC36FEA31DC949D8008F1FA8 /* Extensions.swift */,
 				DC8836DB1DC7C52D00E05AEF /* Tail */,
 				DC8836F01DC7C52D00E05AEF /* TailTests */,
 				DC8836FB1DC7C52D00E05AEF /* TailUITests */,
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				DC88370C1DC7CAE200E05AEF /* TailText.swift */,
+				DC36FEA51DC94AD7008F1FA8 /* TailTextField.swift */,
+				DC36FEA11DC8F8F3008F1FA8 /* CalibrationDot.swift */,
 				DC36FE9D1DC84092008F1FA8 /* KeyboardTail.swift */,
 			);
 			name = Views;
@@ -296,11 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC88370F1DC7D18900E05AEF /* Constants.swift in Sources */,
+				DC36FEA61DC94AD7008F1FA8 /* TailTextField.swift in Sources */,
 				DC36FE9E1DC84092008F1FA8 /* KeyboardTail.swift in Sources */,
-				DCF7DB2E1DC81D7400856003 /* TailTextField.swift in Sources */,
+				DC36FEA21DC8F8F3008F1FA8 /* CalibrationDot.swift in Sources */,
 				DCF7DB2C1DC7E40600856003 /* InputFormViewController.swift in Sources */,
 				DCF7DB2A1DC7DCCA00856003 /* TailButton.swift in Sources */,
 				DC88370D1DC7CAE200E05AEF /* TailText.swift in Sources */,
+				DC36FEA41DC949D8008F1FA8 /* Extensions.swift in Sources */,
 				DC8836DF1DC7C52D00E05AEF /* SignUpViewController.swift in Sources */,
 				DC36FEA01DC85862008F1FA8 /* CalibrationViewController.swift in Sources */,
 				DC8836DD1DC7C52D00E05AEF /* AppDelegate.swift in Sources */,

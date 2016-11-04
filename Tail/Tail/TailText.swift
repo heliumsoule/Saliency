@@ -21,6 +21,7 @@ class TailText: UILabel {
         self.textColor = UIColor.white
         self.lineBreakMode = .byWordWrapping
         self.textAlignment = .center
+        self.baselineAdjustment = .alignCenters
     }
 
     required init?(coder aDecoder: NSCoder) {
