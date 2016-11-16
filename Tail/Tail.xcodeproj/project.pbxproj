@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1949191DCD65A40074BEA2 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1949181DCD65A40074BEA2 /* LocationViewController.swift */; };
 		DC36FE9E1DC84092008F1FA8 /* KeyboardTail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FE9D1DC84092008F1FA8 /* KeyboardTail.swift */; };
 		DC36FEA01DC85862008F1FA8 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FE9F1DC85862008F1FA8 /* CalibrationViewController.swift */; };
 		DC36FEA21DC8F8F3008F1FA8 /* CalibrationDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC36FEA11DC8F8F3008F1FA8 /* CalibrationDot.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1949181DCD65A40074BEA2 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		DC36FE9D1DC84092008F1FA8 /* KeyboardTail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTail.swift; sourceTree = "<group>"; };
 		DC36FE9F1DC85862008F1FA8 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		DC36FEA11DC8F8F3008F1FA8 /* CalibrationDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationDot.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DC8836DE1DC7C52D00E05AEF /* SignUpViewController.swift */,
 				DC36FE9F1DC85862008F1FA8 /* CalibrationViewController.swift */,
 				DCF7DB2B1DC7E40600856003 /* InputFormViewController.swift */,
+				DC1949181DCD65A40074BEA2 /* LocationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				DCF7DB2C1DC7E40600856003 /* InputFormViewController.swift in Sources */,
 				DCF7DB2A1DC7DCCA00856003 /* TailButton.swift in Sources */,
 				DC88370D1DC7CAE200E05AEF /* TailText.swift in Sources */,
+				DC1949191DCD65A40074BEA2 /* LocationViewController.swift in Sources */,
 				DC36FEA41DC949D8008F1FA8 /* Extensions.swift in Sources */,
 				DC8836DF1DC7C52D00E05AEF /* SignUpViewController.swift in Sources */,
 				DC36FEA01DC85862008F1FA8 /* CalibrationViewController.swift in Sources */,

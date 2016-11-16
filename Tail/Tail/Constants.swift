@@ -45,12 +45,13 @@ struct Constants {
     struct Calibration {
         static let clockFS:CGFloat = 46
         static let clockFW:CGFloat = UIFontWeightThin
-        static let startTime:Int = 3
+        static let startTime:Int = 5
         
         static let centerRatio:CGFloat = 0.4
         
-        static let numberOfRows:Int = 5
+        static let numberOfRows:Int = 2
         static let numberOfCols:Int = 4
+        static let secondsPerDot:Double = 2.0
         static let circleDiameter:CGFloat = 0.1
     }
 }

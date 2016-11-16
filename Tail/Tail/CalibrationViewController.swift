@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalibrationViewController: UIViewController {
+class CalibrationViewController: LocationViewController {
     
     let clockField = TailText(fontSize: Constants.Calibration.clockFS, fontWeight: Constants.Calibration.clockFW, text: "")
     var timer:Timer!
@@ -18,8 +18,8 @@ class CalibrationViewController: UIViewController {
     var widthConstraint:NSLayoutConstraint!
     var heightConstraint:NSLayoutConstraint!
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override init() {
+        super.init()
         
         self.view.backgroundColor = UIColor.white
         
@@ -71,7 +71,7 @@ class CalibrationViewController: UIViewController {
             switchAlphas(shouldCalibrate: true)
             self.calibrationDot.animateDot()
             
-            self.timer = Timer(timeInterval: 2.0, target: self, selector: #selector(calibrate), userInfo: nil, repeats: true)
+            self.timer = Timer(timeInterval: Constants.Calibration.secondsPerDot, target: self, selector: #selector(calibrate), userInfo: nil, repeats: true)
             RunLoop.current.add(self.timer, forMode: .commonModes)
         }
     }
@@ -115,9 +115,6 @@ class CalibrationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
     }
     
 }
