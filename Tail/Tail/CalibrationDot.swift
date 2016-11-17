@@ -85,7 +85,7 @@ class CalibrationDot: UIView {
         shrink.toValue = NSNumber(value: 0.4)
         shrink.autoreverses = false
         shrink.isRemovedOnCompletion = false
-        self.centerDot.add(shrink, forKey: "animateDot")
+        self.centerDot.add(shrink, forKey: "shrinkDot")
     
     }
     
