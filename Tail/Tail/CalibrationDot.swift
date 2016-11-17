@@ -74,15 +74,31 @@ class CalibrationDot: UIView {
         
     }
     
+    func shrinkDot(){
+        
+        let shrink = CABasicAnimation(keyPath: "transform.scale")
+        shrink.duration = 3.0
+        shrink.speed = 2
+        shrink.fillMode = kCAFillModeForwards
+        shrink.autoreverses = false
+        shrink.fromValue = NSNumber(value: 1)
+        shrink.toValue = NSNumber(value: 0.4)
+        shrink.autoreverses = false
+        shrink.isRemovedOnCompletion = false
+        self.centerDot.add(shrink, forKey: "animateDot")
+    
+    }
+    
     func animateDot() {
-        let fadeIn = CABasicAnimation(keyPath: "opacity")
+        shrinkDot();
+        /*let fadeIn = CABasicAnimation(keyPath: "opacity")
         fadeIn.duration = 1.0
         fadeIn.autoreverses = false
         fadeIn.fromValue = NSNumber(value: 0.2)
         fadeIn.toValue = NSNumber(value: 1.0)
         fadeIn.fillMode = kCAFillModeBoth
         self.centerDot.add(fadeIn, forKey: "animateDot")
-        
+        */
     }
     
 }
