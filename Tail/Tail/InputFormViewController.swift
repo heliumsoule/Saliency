@@ -125,7 +125,7 @@ class InputFormViewController: UIViewController {
     
     func keyboardWillShow(_ notification: NSNotification) {
         changeKeyboardContainerHeight(notification: notification, showingKeyboard: true)
-    }
+    }	
     
     func keyboardWillHide(_ notification: NSNotification) {
         changeKeyboardContainerHeight(notification: notification, showingKeyboard: false)

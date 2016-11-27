@@ -88,7 +88,7 @@ class SignUpViewController: UIViewController {
         
         print("Should go to calibration view")
         NotificationCenter.default.removeObserver(name: NSNotification.Name.init(rawValue: Constants.General.inputConfirmationKey))
-        self.navigationController!.present(CalibrationViewController(), animated: true, completion: nil)
+        self.navigationController!.present(InitialTimerViewController(), animated: true, completion: nil)
     }
 
 }

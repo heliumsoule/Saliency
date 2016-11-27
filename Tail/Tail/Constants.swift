@@ -29,6 +29,18 @@ struct Constants {
         static let buttonCR:CGFloat = 3.0
     }
     
+    struct Checkerboard {
+        static let buttonText:String = "Dot Calibration"
+        static let buttonFS:CGFloat = 16.0
+        static let buttonCR:CGFloat = 3.0
+    }
+    
+    struct Calibrate {
+        static let buttonText:String = "Calibrate"
+        static let buttonFS:CGFloat = 16.0
+        static let buttonCR:CGFloat = 3.0
+    }
+    
     struct InputForm {
         static let descriptionFS:CGFloat = 18.0
         static let descriptionFW:CGFloat = UIFontWeightThin
